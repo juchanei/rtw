@@ -83,9 +83,10 @@ Comparator<Integer> naturalOrder = new Comparator<Integer>(){
     }
 }
 ```
-    - 표현식 first < second 는 Integer 객체를 기본 자료형 값으로 자동 변환한다.
-    - 연산자 ==는 객체 참조를 통해 두 객체의 신원을 비교한다.
-        - 객체화된 기본 자료형에 == 연산자를 사용하는 것은 거의 항상 오류라고 봐야한다.
+- 표현식 first < second 는 Integer 객체를 기본 자료형 값으로 자동 변환한다.
+- 연산자 ==는 객체 참조를 통해 두 객체의 신원을 비교한다.
+    - 객체화된 기본 자료형에 == 연산자를 사용하는 것은 거의 항상 오류라고 봐야한다.
+    
 ```
 Comparator<Integer> naturalOrder = new Comparator<Integer>() {
     public int compare(Integer first, Integer second) {
@@ -95,7 +96,7 @@ Comparator<Integer> naturalOrder = new Comparator<Integer>() {
     }
 }
 ```
-- 자료형과 객체화된 기본 자료형을 한 연산 안에 엮어 놓으면 객체화된 기본 자료형은 자동으로 기본 자료형으로 벼환돤디ㅏ.
+- 자료형과 객체화된 기본 자료형을 한 연산 안에 엮어 놓으면 객체화된 기본 자료형은 자동으로 기본 자료형으로 환된.
 - null인 객체 참조를 기본 자료형으로 변환하려 시도하면 NullPointerException이 발생한다.
 - 계속해서 객체화와 비객체화를 반복하기 때문에 성능이 느려진다.
 - 객체화된 자료형은 언제 사용해야 하나?
