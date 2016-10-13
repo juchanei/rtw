@@ -117,6 +117,6 @@ Comparator<Integer> naturalOrder = new Comparator<Integer>(){
     - 혼합 자료형을 만들 때는 클래스를 만드는 것이 낫다.
         - 이런 클래스는 보통 private static 멤버클래스로 선언된다.
 - 문자열은 권한을 표현하기에 부족하다.
-    - ???
+    - ?????
 
 ---
