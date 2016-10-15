@@ -1,3 +1,3 @@
 # Today I Learnd
 ---
-매 공하 내 정ㅣㅏㅡ Repositiory 입.
+매일 공부 내용을 정리하는 Repository 입니다.
