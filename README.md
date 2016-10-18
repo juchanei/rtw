@@ -1,6 +1,10 @@
 # INDEX
 
 ---
+- ## Effective Java
+  - Joshua Bloch의 Effective Java 정리 중
+  - http://book.naver.com/bookdb/book_detail.nhn?bid=8064518
+  
 - ## More C++ Idioms
   - More C++ Idioms 한국어 번역 중
   - https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms
