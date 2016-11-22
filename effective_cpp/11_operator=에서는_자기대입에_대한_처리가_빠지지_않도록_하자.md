@@ -11,7 +11,7 @@ class ABC {
 public:
   // ...
 	ABC& operator=(const ABC& rhs) {
-    delete rhs.pefg;
+    		delete rhs.pefg;
 		pefg = new EFG(*rhs.pefg);
 		return *this;
 	}
@@ -42,8 +42,8 @@ a[i] = a[j];
 
 ```
 ABC& ABC::operator=(const ABC& rhs){
-  if (this == &rhs) return *this;
-	delete rhs.pefg;
+	if (this == &rhs) return *this;
+	delete pefg;
 	pefg = new EFG(*rhs.pefg);
 	return *this;
 }
@@ -57,9 +57,9 @@ ABC& ABC::operator=(const ABC& rhs){
 ### 복사/해제 순서바꾸기
 ```
 ABC& ABC::operator=(const ABC& rhs){
-  EFG* temp = *rhs.pefg;
+  	EFG* temp = pefg;
 	pefg = new EFG(*rhs.pefg);
-  delete temp;
+  	delete temp;
 	return *this;
 }
 ```
