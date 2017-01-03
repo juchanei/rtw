@@ -103,3 +103,12 @@
   (= (reduce + (map inc (take 3 (drop 2 [2 5 4 1 3 6]))))
      (->> [2 5 4 1 3 6] (drop 2) (take 3) (map inc) (reduce +))
      11))
+
+"For-the-win"
+
+"1주차 - 4일차"
+
+(defn Penultimate-Element []
+  ((= (#(second (reverse %)) (list 1 2 3 4 5)) 4)
+  (= (#(second (reverse %)) ["a" "b" "c"]) "b")
+  (= (#(second (reverse %)) [[1 2] [3 4]]) [1 2])))
