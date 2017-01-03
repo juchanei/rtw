@@ -112,3 +112,34 @@
   ((= (#(second (reverse %)) (list 1 2 3 4 5)) 4)
   (= (#(second (reverse %)) ["a" "b" "c"]) "b")
   (= (#(second (reverse %)) [[1 2] [3 4]]) [1 2])))
+
+(defn Sum-It-All-Up []
+  ((= (reduce + [1 2 3]) 6)
+  (= (reduce + (list 0 -2 5 5)) 8)
+  (= (reduce + #{4 2 1}) 7)
+  (= (reduce + '(0 0 -1)) -1)
+  (= (reduce + '(1 10 3)) 14)))
+
+(defn Find-the-odd-numbers []
+  ((= (filter even? #{1 2 3 4 5}) '(1 3 5))
+  (= (filter even? [4 2 1 6]) '(1))
+  (= (filter even? [2 2 4 6]) '())
+  (= (filter even? [1 1 1 3]) '(1 1 1 3))))
+
+(defn Palindrome-Detector []
+  ((let [sol-fn #(= (reverse (into [] %)) (into [] %))]
+    (false? (sol-fn '(1 2 3 4 5)))
+    (true? (sol-fn "racecar"))
+    (true? (sol-fn [:foo :bar :foo]))
+    (true? (sol-fn '(1 1 3 3 1 1)))
+    (false? (sol-fn '(:a :b :c))))))
+
+(defn Duplicate-a-Sequence []
+  ((let [sol-fn (fn duplicate [target]
+                   (if (empty? target)
+                     '()
+                     (conj (duplicate (rest target)) (first target) (first target))))]
+    (= (sol-fn [1 2 3]) '(1 1 2 2 3 3))
+    (= (sol-fn [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
+    (= (sol-fn [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
+    (= (sol-fn [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4])))))
