@@ -104,7 +104,7 @@
      (->> [2 5 4 1 3 6] (drop 2) (take 3) (map inc) (reduce +))
      11))
 
-"For-the-win"
+"For-the-win "
 
 "1주차 - 4일차"
 
@@ -117,7 +117,7 @@
   ((= (reduce + [1 2 3]) 6)
   (= (reduce + (list 0 -2 5 5)) 8)
   (= (reduce + #{4 2 1}) 7)
-  (= (reduce + '(0 0 -1)) -1)
+  (= (reduce + '(0 0 -1)) -1)4
   (= (reduce + '(1 10 3)) 14)))
 
 (defn Find-the-odd-numbers []
