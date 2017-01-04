@@ -143,3 +143,36 @@
     (= (sol-fn [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
     (= (sol-fn [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
     (= (sol-fn [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4])))))
+
+"1주차 - 5일차"
+
+(defn Compress-a-Sequence []
+  ((= (apply str (#(map first (partition-by identity %)) "Leeeeeerrroyyy")) "Leroy")
+  (= (#(map first (partition-by identity %)) [1 1 2 3 3 2 2 3]) '(1 2 3 2 3))
+  (= (#(map first (partition-by identity %)) [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2]))))
+
+(defn Pack-a-Sequence []
+  ((= (#(partition-by identity %) [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3)))
+  (= (#(partition-by identity %) [:a :a :b :b :c]) '((:a :a) (:b :b) (:c)))
+  (= (#(partition-by identity %) [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))))
+
+(defn Drop-Every-Nth-Item []
+  (let [sol-fn (fn [the-vector n]
+    (if (empty? the-vector)
+      '()
+      (concat
+       (take (dec n) the-vector)
+       (drop-nth-item (drop n the-vector) n))))]
+    ((= (__ [1 2 3 4 5 6 7 8] 3) [1 2 4 5 7 8])
+    (= (__ [:a :b :c :d :e :f] 2) [:a :c :e])
+    (= (__ [1 2 3 4 5 6] 4) [1 2 3 5 6]))))
+
+(defn Intro-to-Iterate []
+  (= '(1 4 7 10 13) (take 5 (iterate #(+ 3 %) 1)))
+
+(defn Replicate-a-sequence []
+  ((= ((fn [the-list n] (mapcat #(repeat n %) the-list)) [1 2 3] 2) '(1 1 2 2 3 3))
+  (= ((fn [the-list n] (mapcat #(repeat n %) the-list)) [:a :b] 4) '(:a :a :a :a :b :b :b :b))
+  (= ((fn [the-list n] (mapcat #(repeat n %) the-list)) [4 5 6] 1) '(4 5 6))
+  (= ((fn [the-list n] (mapcat #(repeat n %) the-list)) [[1 2] [3 4]] 2) '([1 2] [1 2] [3 4] [3 4]))
+  (= ((fn [the-list n] (mapcat #(repeat n %) the-list)) [44 33] 2) [44 44 33 33]))
