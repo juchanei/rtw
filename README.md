@@ -8,7 +8,7 @@
   - More C++ Idioms 한국어 번역 중
   - https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms
 
-- [Effective C++](effective_cpp/0_effective_cpp.md)
+- [Effective C++](effective_cpp/README.md)
   - Scott Meyers의 Effective C++ 정리 중
   - http://book.naver.com/bookdb/book_detail.nhn?bid=8970299
 
